@@ -1,23 +1,52 @@
-import logo from './logo.svg';
 import './App.css';
+import Homepage from './Pages/Homepage'
+import Navbar from 'react-bootstrap/Navbar'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
+import Article from './Pages/Article';
+import Nav from 'react-bootstrap/Nav'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 function App() {
   return (
+    
     <div className="App">
+      <Navbar collapseOnSelect bg="dark" expand="lg" className="text-white">
+        <Router>
+          <Nav.Link eventKey="1" href="/">
+        <Navbar.Brand className="text-light" >News Portal</Navbar.Brand>
+        </Nav.Link>
+        </Router>
+      <Navbar.Toggle className="ml-auto md-hidden" id="toggler"/>
+      <Navbar.Collapse >
+        <Nav className="ml-auto d-block">
+          <Container>
+          <Row className="mx-sm-auto">
+
+          <Form inline className="md-12 mt-xs-4 ml-sm-5">
+            <Col xs={8} className="mt-sm-4 mb-sm-4 ">
+          <FormControl type="text" placeholder="Search" className="ml-auto" action="#"/>
+          </Col>
+          <Col>
+          <Button variant="outline-light" className="mx-auto">Search</Button>
+          </Col>
+        </Form>
+
+        </Row>
+        </Container>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+      <Router>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Route path="/" exact component={Homepage}/>
+        <Route path="/article" component={Article}/>
       </header>
+      </Router>
     </div>
   );
 }
