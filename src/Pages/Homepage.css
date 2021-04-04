@@ -1,8 +1,16 @@
 .card{
     padding:20px;
-    color:rgb(13, 13, 100);
+    color:rgb(20, 20, 37);
     margin-top:10%;
     margin-bottom:5%;
+    -webkit-box-shadow: 0 6px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    box-shadow: -4px 6px 4px 6px rgba(40, 41, 44, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+}
+
+.card:hover{
+    transform: scale(1.01);
+    transition: 1s ease-in-out;
 }
 
 .col-12{
@@ -15,10 +23,36 @@
     margin-right: auto;
 }
 
+
 #spinner-col{
     height: 100%;
     display:flex;
     justify-content: center;
     align-items: center;
     margin-top:20%;
+}
+
+.badge-danger{
+    cursor: pointer;
+    line-height: normal;
+}
+
+.badge-danger:hover{
+    transform: scale(1.1);
+    transition: ease-out 1s ;
+}
+
+
+#actionCol{
+    display:inline-flex;
+    padding-top:2%
+}
+
+img{
+    box-shadow: 1px 1px 4px 5px rgba(14, 14, 15, 0.27); 
+}
+
+.card-header{
+    display: flex;
+    justify-content: center;
 }

@@ -3,7 +3,12 @@
 }
 
 #basic-navbar-nav{
-  display:inline-block;
+  display:inline-block; 
+}
+
+.navbar{
+  background: linear-gradient(90deg, rgb(26, 28, 29) 40%, rgb(179, 179, 136));
+  box-shadow: o o o 16px black;
 }
 
 #toggler{

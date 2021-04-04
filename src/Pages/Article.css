@@ -1,3 +1,7 @@
-h1{
-    color:blue
+#specialCard{
+    background: transparent
+}
+
+#specialCard:hover{
+    transform:scale(1)
 }
