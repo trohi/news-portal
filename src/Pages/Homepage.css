@@ -6,12 +6,14 @@
     -webkit-box-shadow: 0 6px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
     box-shadow: -4px 6px 4px 6px rgba(40, 41, 44, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    background: transparent !important
 }
 
 .card:hover{
     transform: scale(1.01);
     transition: 1s ease-in-out;
 }
+
 
 .col-12{
     margin-left: auto;
@@ -32,7 +34,7 @@
     margin-top:20%;
 }
 
-.badge-danger{
+.badge{
     cursor: pointer;
     line-height: normal;
 }

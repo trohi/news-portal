@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
-import { Route, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Switch, Link } from 'react-router-dom'
 import Article from './Pages/Article';
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
@@ -41,13 +41,14 @@ function App() {
   }
 
   return (
+    <Router>
       <div className="App">
         <Navbar collapseOnSelect expand="lg" className="text-white" sticky="top">
-          <Router>
-            <Nav.Link eventKey="1" href="/">
+      
+            <Link to="/">
           <Navbar.Brand className="text-light" >News Portal</Navbar.Brand>
-          </Nav.Link>
-          </Router>
+          </Link>
+        
         <Navbar.Toggle className="ml-auto md-hidden" id="toggler"/>
         <Navbar.Collapse >
           <Nav className="ml-auto d-block">
@@ -68,13 +69,21 @@ function App() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-        <Router>
+        
         <header className="App-header">
-          <Route path="/" exact component={Homepage}/>
-          <Route path="/article" component={Article}/>
+        <Switch>
+        <Route path="/article">
+          <Article/>
+        </Route>
+
+        <Route path="/" exact>
+          <Homepage/>
+        </Route>
+        </Switch>
         </header>
-        </Router>
       </div>
+      </Router>
+       
   );
 }
 

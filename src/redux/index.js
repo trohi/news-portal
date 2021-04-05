@@ -51,7 +51,7 @@ export const reducer = (state = initialState, action) =>{
             ;
         case 'READ_MORE':
             let clone3 = Object.assign({}, state, {
-                filteredArticles: action.payload
+                article: action.payload
             })
             return clone3
             ;

@@ -8,7 +8,7 @@ import Spinner from 'react-bootstrap/Spinner'
 import Badge from 'react-bootstrap/Badge'
 import Dropdown from 'react-bootstrap/Dropdown'
 import { useDispatch, useSelector } from 'react-redux'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router, Link } from 'react-router-dom'
 import { readMore, ClearSearchResults, SearchEngine, SortBy} from '../redux/actions/reduxActions'
 
 function Homepage(){ 
@@ -50,9 +50,9 @@ function Homepage(){
                                 <Card.Text className="mt-3 mb-3 px-2">
                                     {article.description}
                                 </Card.Text>
-                             <Router>
-                             <a href="/article" ><Button variant="outline-dark" block onClick={()=> dispatch(readMore(article))}>Read full article</Button></a>
-                             </Router>
+                             <Link to="/article">
+                                <Button variant="outline-dark" block onClick={()=> dispatch(readMore(article))}>Read full article</Button>
+                             </Link>
                             </Card.Body>
                         </Card>
                     </Col>   
@@ -60,7 +60,7 @@ function Homepage(){
                 } else if(filteredArticles.length > 1) {
                 return !isLoading && filteredArticles.length > 1  ? filteredArticles.map(function(article, index){
                 return <Col xs={12} md={9} className="text-primary" key={index}>
-                        <Card className="card md-12" border="secondary" >
+                        <Card className="card md-12"  >
                             <Card.Header>{article.title}</Card.Header>
                             <Card.Body>
                                 <Card.Img variant="top" src={article.urlToImage}></Card.Img>
@@ -68,13 +68,15 @@ function Homepage(){
                                 <Card.Text className="mt-3 mb-3 px-2">
                                     {article.description}
                                 </Card.Text>
-                             <Router>
-                             <a href="/article" ><Button variant="outline-dark" block onClick={()=> dispatch(readMore(article))}>Read full article</Button></a>
-                             </Router>
+                             <Link to="/article">
+                                <Button variant="outline-dark" block onClick={()=> dispatch(readMore(article))}>Read full article</Button>
+                             </Link>
                             </Card.Body>
                         </Card>
                       </Col>
                     }) : <Loading></Loading>  
+        } else {
+            return false
         }
     }
 
@@ -100,7 +102,7 @@ function Homepage(){
                     </Dropdown>
                    </Col>: false
                 }  
-                <Col xs={12} md={9} className="text-primary">
+                {/* <Col xs={12} md={9} className="text-primary">
                         <Card className="card md-12" border="secondary" >
                             <Card.Header>The dummy title</Card.Header>
                             <Card.Body>
@@ -113,7 +115,7 @@ function Homepage(){
                              </Router>
                             </Card.Body>
                         </Card>
-                    </Col>    
+                    </Col>     */}
                 <ComponentRender></ComponentRender>
             </Row>
         </Container>

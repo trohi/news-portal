@@ -5,3 +5,9 @@
 #specialCard:hover{
     transform:scale(1)
 }
+
+.card-footer{
+    display: flex;
+    justify-content: center;
+    margin: 0 !important
+}
