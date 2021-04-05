@@ -14,7 +14,6 @@
     transition: 1s ease-in-out;
 }
 
-
 .col-12{
     margin-left: auto;
     margin-right: auto;
@@ -24,7 +23,6 @@
     margin-left: auto;
     margin-right: auto;
 }
-
 
 #spinner-col{
     height: 100%;
@@ -37,13 +35,13 @@
 .badge{
     cursor: pointer;
     line-height: normal;
+    padding-top: .7rem !important
 }
 
 .badge-danger:hover{
     transform: scale(1.1);
     transition: ease-out 1s ;
 }
-
 
 #actionCol{
     display:inline-flex;

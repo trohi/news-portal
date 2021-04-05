@@ -1,10 +1,9 @@
 import './Article.css'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { useDispatch, useSelector, connect } from 'react-redux'
+import {  useSelector } from 'react-redux'
 
 
 function Article(){
@@ -13,9 +12,9 @@ function Article(){
             <Container fluid>
                 <Row >
                     <Col xs="12" className="text-primary">
-                        <Card className="card" className="md-12 text-light" id="specialCard">    
+                        <Card  className="card md-12 text-light" id="specialCard" border="secondary">    
                             <Card.Header>{article.title}</Card.Header>
-                                <Card.Body className="sm-1 ml-5">
+                                <Card.Body className="sm-1">
                                     <Card.Title className="mb-4">{article.description}</Card.Title>
                                     <Card.Subtitle className="mb-3">Source: {article.source.name}</Card.Subtitle>
                                     <Card.Img variant="top" src={article.urlToImage}></Card.Img>

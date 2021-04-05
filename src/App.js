@@ -10,17 +10,11 @@ import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import { useSelector, useDispatch } from 'react-redux'
-import { SearchEngine, ComponentDeterminor, GetUsersSortSpec } from './redux/actions/reduxActions'
+import { useDispatch } from 'react-redux'
+import { SearchEngine, GetUsersSortSpec } from './redux/actions/reduxActions'
 
 function App() {
-  const articles  = useSelector(state => state.articles)
   const dispatch = useDispatch()
-
- /*  const onLoad = ()=> {
-    return dispatch(fetchArticles())
-  }
- */
 
   //getting user's input and using that value in request 
   //in order to get articles with matching terms
@@ -34,8 +28,7 @@ function App() {
       return data
     })
     .then(data =>{
-      console.log(data.articles)
-      dispatch(ComponentDeterminor("filtered"))
+     // dispatch(ComponentDeterminor("filtered"))
       dispatch(SearchEngine(data.articles))
     })
   }
@@ -60,7 +53,7 @@ function App() {
             <FormControl type="text" placeholder="Search" className="ml-auto secondary" id="input" action="#" />
             </Col>
             <Col>
-            <Button variant="outline-dark" className="mx-auto" onClick={filter}>Search</Button>
+            <Button variant="dark" className="mx-auto" onClick={filter}>Search</Button>
             </Col>
           </Form>
 
@@ -70,7 +63,7 @@ function App() {
         </Navbar.Collapse>
       </Navbar>
         
-        <header className="App-header">
+        <div className="App-header">
         <Switch>
         <Route path="/article">
           <Article/>
@@ -80,7 +73,7 @@ function App() {
           <Homepage/>
         </Route>
         </Switch>
-        </header>
+        </div>
       </div>
       </Router>
        

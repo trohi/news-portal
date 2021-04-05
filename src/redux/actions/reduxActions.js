@@ -1,9 +1,4 @@
-export const LoadMore = articles => ({
-    type: 'LOAD_MORE',
-    payload: articles
-})
-
-export const LoadEm = articles =>({
+export const LoadData = articles =>({
     type:'LOAD_THE_DATA',
     payload: articles
 })
@@ -38,18 +33,6 @@ export const ClearSearchResults = () =>({
 export const ComponentDeterminor = (type) =>({
     type: 'COMPONENT_RENDER_DETERMINATION',
     payload: type
-})
-
-export const SortByDate = (value) =>({
-    type: 'SORT_BY_DATE'
-})
-
-export const SortByRelevance = (value) =>({
-    type: 'SORT_BY_RELEVANCE'
-})
-
-export const SortByPopularity = (value) =>({
-    type: 'SORT_BY_POPULARITY'
 })
 
 export const GetUsersSortSpec = (value) =>({
