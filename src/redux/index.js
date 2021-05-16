@@ -71,9 +71,7 @@ export const reducer = (state = initialState, action) =>{
 //function with responsibility of fetching initial articles 
 export const fetchArticles = () => (dispatch, getState) => {
     dispatch(SetLoading())
-    fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=31e11c95598d4760bc5c73fb2b0417f2",{
-        mode:"same-origin"
-    })
+    fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=31e11c95598d4760bc5c73fb2b0417f2")
     .then(res => {
         const data = res.json()
         return data
